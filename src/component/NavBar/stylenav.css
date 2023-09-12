@@ -1,0 +1,24 @@
+.nav{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 10px;
+    padding: 10px;
+    margin: 5px;
+    background: #c2e6f8;
+}
+
+.nav h3{
+    font-size: 20px;
+    border: 2px solid #9659a7;
+    width: 80px;
+    border-radius: 15px;
+}
+
+.divcat button{
+    margin: 5px;
+    padding: 5px;
+    border-style: solid;
+    border: 2px solid #578faa;
+    border-radius: 15px;
+}

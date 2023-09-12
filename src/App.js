@@ -1,16 +1,14 @@
-import logo from './logo.svg';
 import './App.css';
-import Polyfill from './component/Polyfill/Polyfill.js';
-import Prueba from './component/Prueba/Prueba.js';
-
+import NavBar from './component/NavBar/NavBar';
+import CardList from './component/CardList/CardList';
 
 
 function App() {
   return (
     <div className="App">
-      <Polyfill/>
-      <Prueba/>
-      
+      <NavBar />
+      <CardList />
+    
     </div>
   );
 }
