@@ -1,6 +1,6 @@
 import './stylecards.css'
 
-export default function Cards(titulo, marca, precio, desc, carac, cat){
+export default function Cards({titulo, marca, precio, desc, carac, cat} ){
     return(
         <div className='divcards'>
             <h2>{titulo}</h2>
