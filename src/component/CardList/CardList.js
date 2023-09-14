@@ -31,8 +31,8 @@ export default function CardList(){
     
     return(
         <div className='divmapeo'>
-            {productos.map((element)=>{
-                return <Cards titulo={element.titulo} marca={element.marca} precio={element.precio} desc={element.desc} carac={element.carac} cat={element.cat}/>
+            {productos.map((element, i)=>{
+                return <Cards titulo={element.titulo} marca={element.marca} precio={element.precio} desc={element.desc} carac={element.carac} cat={element.cat} key={i}/>
             })}
         </div>
     )
