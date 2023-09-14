@@ -1,4 +1,4 @@
-import carrito from './assets/carrito.png'
+import carrito from '../Cards/assets/carrito.png'
 import "./stylecarrito.css"
 
 export default function CartWidget (){

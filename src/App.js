@@ -1,6 +1,7 @@
 import './App.css';
 import NavBar from './component/NavBar/NavBar';
 import CardList from './component/CardList/CardList';
+import BootStrap from './component/BootStrap/BootStrap';
 
 
 function App() {
@@ -8,6 +9,7 @@ function App() {
     <div className="App">
       <NavBar />
       <CardList />
+      <BootStrap />
     
     </div>
   );
