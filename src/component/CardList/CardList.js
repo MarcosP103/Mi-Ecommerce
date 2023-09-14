@@ -1,9 +1,10 @@
 import { useState } from 'react'
 import Cards from '../Cards/Cards'
+import './stylecardlist.css'
 
 export default function CardList(){
     
-    const [productos, setproductos]=useState([{
+    const [productos]=useState([{
         titulo:"Caja Activa",
         marca:"JBL 15",
         precio:"$500",
