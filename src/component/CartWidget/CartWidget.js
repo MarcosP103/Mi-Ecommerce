@@ -1,4 +1,4 @@
-import carrito from '../Cards/assets/carrito.png'
+import carrito from '../../assets/carrito.png'
 import "./stylecarrito.css"
 
 export default function CartWidget (){
@@ -10,7 +10,7 @@ export default function CartWidget (){
     return (
         <div>
             <img src={carrito} className="imgcarrito" alt="carrito" onClick={eventoClick}/>
-            0
+            <span>0</span>
         </div>
     );
 }
