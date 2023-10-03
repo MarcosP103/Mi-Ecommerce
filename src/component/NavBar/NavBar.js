@@ -4,7 +4,7 @@ import "./stylenav.css"
 export default function NavBar () {
     return(
         <nav className='nav'>
-            <h3><a href='asdasd'>EMusic</a></h3>
+            <h3><a href=''>EMusic</a></h3>
             <div className='divcat'>
                 <button>Cajas Acusticas</button>
                 <button>Instrumentos</button>
