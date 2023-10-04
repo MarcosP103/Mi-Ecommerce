@@ -1,5 +1,6 @@
 .nav{
     display: flex;
+    flex-direction: row;
     justify-content: space-between;
     align-items: center;
     gap: 10px;
@@ -9,11 +10,21 @@
 
 .nav h3{
     font-size: 20px;
-    border: 2px solid #9659a7;
     width: 80px;
     border-radius: 15px;
+    margin-left: 10px;
+    text-decoration: none;
 }
 
+.divcat{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    gap: 10px;
+    padding: 10px;
+
+}
 .divcat button{
     margin: 5px;
     padding: 5px;
@@ -28,3 +39,6 @@ button:is(:hover, :focus){
 	transition-duration: 1s;
 }
 
+.hsubrayado{
+    text-decoration: none;
+}

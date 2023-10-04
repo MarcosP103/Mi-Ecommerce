@@ -7,7 +7,7 @@ export default function NavBar () {
     return(
         <nav className='nav'>
             <Link to='/'>
-                <h3>EMusic</h3>
+                <h3 className='hsubrayado'>EMusic</h3>
             </Link>
             <div className='divcat'>
                 <NavLink to={`/cat/cajasacusticas`} className={({ isActive}) => isActive ? 'ActiveOption' : 'Option'}>Cajas Acusticas</NavLink>

@@ -1,20 +1,25 @@
+import "./stylecardlist.css";
 import { useState, useEffect } from "react";
 import Cards from "../Cards/Cards";
-import "./stylecardlist.css";
-import { getProductos } from "../../data/data";
+import { getProductos, getProductoByCat } from "../../data/data";
+import { useParams } from "react-router-dom";
 
 export default function CardList() {
   const [productos, setProductos] = useState([]);
 
+  const { catId } = useParams ()
+
   useEffect(() => {
-    getProductos()
-      .then((response) => {
-        setProductos(response);
-      })
-      .catch((error) => {
+    const asyncFunc = catId ? getProductoByCat :  getProductos
+
+    asyncFunc(catId)
+        .then(response => {
+            setProductos(response)
+        })
+        .catch((error) => {
         console.error(error);
       });
-  }, []);
+  }, [catId]);
 
   return (
     <div className="divmapeo">
