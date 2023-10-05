@@ -70,7 +70,7 @@ export const getProdcutoById = (DataId) => {
 export const getProductoByCat = (DataCat) => {
   return new Promise((resolve) => {
     setTimeout(() => {
-      resolve(Data.find((prod) => prod.cat === DataCat));
+      resolve(Data.filter((prod) => prod.cat === DataCat));
     }, 500);
   });
 };

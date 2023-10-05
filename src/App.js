@@ -10,7 +10,7 @@ function App() {
       <NavBar />
       <Routes>
         <Route exact path="/" element={<CardList />} />
-        <Route exact path="/cat/:cajasacusticas" element={<CardDetailContainer/>} />
+        <Route exact path="/cat/:cajasacusticas" element={<CardList/>} />
         <Route path="*" element={<h1>404 NOT FOUND</h1>} />
       </Routes>
     </BrowserRouter>
