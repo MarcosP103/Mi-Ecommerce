@@ -34,6 +34,7 @@ export default function CardList() {
           carac={element.carac}
           cat={element.cat}
           key={i}
+          id={element.id}
         />
       ))
     ) : (

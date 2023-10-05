@@ -62,7 +62,7 @@ export const getProductos = () => {
 export const getProdcutoById = (DataId) => {
   return new Promise((resolve) => {
     setTimeout(() => {
-      resolve(Data.find((prod) => prod.id === DataId));
+      resolve(Data.find((Data) => Data.id === DataId));
     }, 500);
   });
 };

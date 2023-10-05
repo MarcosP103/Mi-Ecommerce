@@ -2,6 +2,7 @@ import CartWidget from '../CartWidget/CartWidget';
 import "./stylenav.css";
 import { NavLink, Link } from 'react-router-dom';
 
+
 export default function NavBar () {
     return(
         <nav className='nav'>
@@ -11,9 +12,9 @@ export default function NavBar () {
             <div className='divcat'>
                 <NavLink to={`/cat/cajasacusticas`} className={({ isActive}) => isActive ? 'ActiveOption' : 'Option'}>Cajas Acusticas</NavLink>
                 <NavLink to={`/cat/instrumentos`} className={({ isActive}) => isActive ? 'ActiveOption' : 'Option'}>Instrumentos</NavLink>
-                <NavLink to={`/cat/Microfonos`} className={({ isActive}) => isActive ? 'ActiveOption' : 'Option'}>Microfonos</NavLink>
+                <NavLink to={`/cat/microfonos`} className={({ isActive}) => isActive ? 'ActiveOption' : 'Option'}>Microfonos</NavLink>
                 <NavLink to={`/cat/consolas`} className={({ isActive}) => isActive ? 'ActiveOption' : 'Option'}>Consolas</NavLink>
-                <NavLink to={`/cat/Accesorios`} className={({ isActive}) => isActive ? 'ActiveOption' : 'Option'}>Accesorios</NavLink>
+                <NavLink to={`/cat/accesorios`} className={({ isActive}) => isActive ? 'ActiveOption' : 'Option'}>Accesorios</NavLink>
             </div>
             <CartWidget />
         </nav>
