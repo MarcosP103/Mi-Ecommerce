@@ -10,12 +10,16 @@ function App() {
     <BrowserRouter>
       <NavBar />
       <Routes>
-        <Route exact path="/" element={<CardList />}/>
-        <Route exact path="/cat/:catId" element={<CardList/>} />
-        <Route exact path="/cards/:cardsId" element={<CardDetailContainer/>} />
+        <Route exact path="/" element={<CardList />} />
+        <Route exact path="/cat/:catId" element={<CardList />} />
+        <Route exact path="/cards/:cardsId" element={<CardDetailContainer />} />
         <Route path="*" element={<h1>404 NOT FOUND</h1>} />
       </Routes>
-      <Contador inicial={1} stock={10} onAdd={(cantidad) => console.log("Cantidad agregada ", cantidad)} />
+      <Contador
+        inicial={1}
+        stock={10}
+        onAdd={(cantidad) => console.log("Cantidad agregada ", cantidad)}
+      />
     </BrowserRouter>
   );
 }

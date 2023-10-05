@@ -7,36 +7,38 @@ import { useParams } from "react-router-dom";
 export default function CardList() {
   const [productos, setProductos] = useState([]);
 
-  const { catId } = useParams ()
+  const { catId } = useParams();
 
   useEffect(() => {
-    const asyncFunc = catId ? getProductoByCat :  getProductos
+    const asyncFunc = catId ? getProductoByCat : getProductos;
 
     asyncFunc(catId)
-        .then(response => {
-            setProductos(response)
-        })
-        .catch((error) => {
+      .then((response) => {
+        setProductos(response);
+      })
+      .catch((error) => {
         console.error(error);
       });
   }, [catId]);
 
   return (
     <div className="divmapeo">
-      {productos.map((element, i) => {
-        return (
-          <Cards
-            titulo={element.titulo}
-            imag={element.imag}
-            marca={element.marca}
-            precio={element.precio}
-            desc={element.desc}
-            carac={element.carac}
-            cat={element.cat}
-            key={i}
-          />
-        );
-      })}
-    </div>
+    {productos && productos.length > 0 ? (
+      productos.map((element, i) => (
+        <Cards
+          titulo={element.titulo}
+          imag={element.imag}
+          marca={element.marca}
+          precio={element.precio}
+          desc={element.desc}
+          carac={element.carac}
+          cat={element.cat}
+          key={i}
+        />
+      ))
+    ) : (
+      <p>No hay productos disponibles.</p>
+    )}
+  </div>
   );
 }

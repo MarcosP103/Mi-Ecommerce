@@ -1,29 +1,29 @@
-import './CardDetailContainer.css'
-import { useState, useEffect } from 'react'
-import { getProdcutoById } from '../../data/data'
-import CardsDetail from '../CardsDetail/CardsDetail'
-import { useParams } from 'react-router-dom'
+import "./CardDetailContainer.css";
+import { useState, useEffect } from "react";
+import { getProdcutoById } from "../../data/data";
+import CardsDetail from "../CardsDetail/CardsDetail";
+import { useParams } from "react-router-dom";
 
 const CardDetailContainer = () => {
-    const [producto, setProducto] = useState (null)
+  const [producto, setProducto] = useState(null)
 
-    const { cardsId } = useParams()
+  const { cardsId } = useParams();
 
-    useEffect(() => {
-        getProdcutoById(cardsId)
-            .then(response => {
-                setProducto(response)
-            })
-            .catch(error => {
-                console.error(error)
-            })
-    }, [])
+  useEffect(() => {
+    getProdcutoById(cardsId)
+      .then(response => {
+        setProducto(response);
+      })
+      .catch((error) => {
+        console.error(error);
+      });
+  }, [cardsId]);
 
-    return(
-        <div className='idc'>
-            <CardsDetail {...producto} />
-        </div>
-    )
-}
+  return (
+    <div className="idc">
+      <CardsDetail {...producto} />
+    </div>
+  );
+};
 
 export default CardDetailContainer;

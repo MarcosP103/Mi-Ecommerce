@@ -8,7 +8,9 @@ export default function Cards({ id, titulo, imag, precio, desc }) {
       <img src={imag} alt={desc} />
       <h3>{precio}</h3>
       <p>{desc}</p>
-      <Link to={`/cards/${id}`} className="opcion">Ver Detalle</Link>
+      <Link to={`/cards/${id}`} className="opcion">
+        Ver Detalle
+      </Link>
     </article>
   );
 }

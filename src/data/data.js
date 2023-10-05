@@ -6,7 +6,7 @@ const Data = [
     precio: "$500",
     desc: "parlante",
     carac: "150 watts",
-    cat: "CajasAcusticas",
+    cat: "cajasacusticas",
     stock: "10",
   },
   {
@@ -16,7 +16,7 @@ const Data = [
     precio: "$1500",
     desc: "piano",
     carac: "8 octavas",
-    cat: "Instrumentos",
+    cat: "instrumentos",
     stock: "10",
   },
   {
@@ -26,7 +26,7 @@ const Data = [
     precio: "$345",
     desc: "consola",
     carac: "Usb 12 Inputs 4 2 BUS",
-    cat: "Consolas",
+    cat: "consolas",
     stock: "10",
   },
   {
@@ -36,7 +36,7 @@ const Data = [
     precio: "$12",
     desc: "antipop",
     carac: "Filtro pop de microfono de fibra",
-    cat: "Accesorios",
+    cat: "accesorios",
     stock: "10",
   },
   {
@@ -46,7 +46,7 @@ const Data = [
     precio: "$75",
     desc: "mic",
     carac: "largo alcance",
-    cat: "Microfonos",
+    cat: "microfonos",
     stock: "10",
   },
 ];
@@ -60,17 +60,17 @@ export const getProductos = () => {
 };
 
 export const getProdcutoById = (DataId) => {
-    return new Promise ((resolve) =>{
-        setTimeout(() => {
-            resolve(Data.find(prod => prod.id === DataId))
-        }, 500)
-    })
+  return new Promise((resolve) => {
+    setTimeout(() => {
+      resolve(Data.find((prod) => prod.id === DataId));
+    }, 500);
+  });
 };
 
 export const getProductoByCat = (DataCat) => {
-  return new Promise ((resolve) => {
+  return new Promise((resolve) => {
     setTimeout(() => {
-      resolve(Data.find(prod => prod.cat === DataCat))
-    }, 500)
-  })
-}
+      resolve(Data.find((prod) => prod.cat === DataCat));
+    }, 500);
+  });
+};
