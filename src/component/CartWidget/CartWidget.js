@@ -13,7 +13,7 @@ export default function CartWidget() {
 
   return (
     <div>
-      <Link to='/carrito' style={{display: coleccion > 0 ? 'block' : 'none'}} >
+      <Link to='/carrito' style={{display: coleccion}} >
       <img
         src="../assets/carrito.png"
         className="imgcarrito"

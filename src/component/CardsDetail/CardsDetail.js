@@ -6,7 +6,15 @@ const CardsDetail = ({ id, titulo, imag, precio, desc, carac, stock }) => {
 
   const [cantidadAdd, setCantidadAdd]=useState(0)
 
-  const { addItem } = useContext(coleccionContext)
+  const { inCarrito, setCarrito } = useContext(coleccionContext);
+  const addItem = (producto, cantidad) => {
+    if (!inCarrito(producto.id)) {
+      setCarrito((prev) => [...prev, { ...producto, cantidad }]);
+    } else {
+      console.error("El producto ya fue agregado");
+    }
+  };
+  
 
   const handleOnAdd=(cantidad)=>{
     setCantidadAdd(cantidad)
