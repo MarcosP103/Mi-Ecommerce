@@ -2,6 +2,7 @@ import { Link } from "react-router-dom";
 import "./stylecards.css";
 
 export default function Cards({ id, titulo, imag, precio, desc, cat }) {
+  
   return (
     <article className="divcards">
       <h2>{titulo}</h2>
@@ -12,6 +13,7 @@ export default function Cards({ id, titulo, imag, precio, desc, cat }) {
       <Link to={`/cards/${id}`} className="opcion">
         Ver Detalle
       </Link>
+      
     </article>
   );
 }

@@ -3,6 +3,8 @@ import { useState, useEffect } from "react";
 import Cards from "../Cards/Cards";
 import { getProductos, getProductoByCat } from "../../data/data";
 import { useParams } from "react-router-dom";
+import { db } from "../.."
+import { collection, getDocs } from "firebase/firestore"
 
 export default function CardList() {
   const [productos, setProductos] = useState([]);
@@ -20,6 +22,21 @@ export default function CardList() {
         console.error(error);
       });
   }, [catId]);
+
+
+  const llamadaFS = () => {
+    const itemsCollection = collection(db, "productos")
+    getDocs(itemsCollection).then((res) => {
+        let items = res.docs.map((elm)=>({...elm.data()}))
+        console.log(items)
+    })
+}
+  
+  useEffect(()=>{
+    llamadaFS()
+  }, [])
+
+
 
   return (
     <div className="divmapeo">
@@ -43,3 +60,5 @@ export default function CardList() {
   </div>
   );
 }
+
+
