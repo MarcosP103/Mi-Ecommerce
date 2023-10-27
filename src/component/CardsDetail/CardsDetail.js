@@ -1,14 +1,15 @@
 import React from "react";
 import { useContext } from "react";
 import { coleccionContext } from "../../context/ColeccionContext";
+import ItemCount from "../Contador/Contador";
 
 const CardsDetail = ({ id, titulo, imag, precio, desc, carac, stock }) => {
 
   const { carrito, setCarrito } = useContext(coleccionContext)
 
-  const comprarProd = (CardsDetail, id) => {
-    console.log(CardsDetail, id)
-    setCarrito([...carrito, CardsDetail])
+  const comprarProd = (id) => {
+    console.log(id)
+    setCarrito([...carrito, id])
   }
 
   return (
@@ -19,7 +20,7 @@ const CardsDetail = ({ id, titulo, imag, precio, desc, carac, stock }) => {
       <p>{carac}</p>
       <h3>{precio}</h3>
       <p>Stock {stock}</p>
-      <button onClick={()=> comprarProd(CardsDetail)}>Comprar</button>
+      <ItemCount/>
     </article>
   );
 };
