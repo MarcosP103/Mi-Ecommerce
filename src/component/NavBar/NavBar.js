@@ -1,4 +1,4 @@
-import CartWidget from '../CartWidget/CartWidget';
+
 import "./stylenav.css";
 import { NavLink, Link } from 'react-router-dom';
 
@@ -16,7 +16,9 @@ export default function NavBar () {
                 <NavLink to={`/cat/consolas`} className={({ isActive}) => isActive ? 'ActiveOption' : 'Option'}>Consolas</NavLink>
                 <NavLink to={`/cat/accesorios`} className={({ isActive}) => isActive ? 'ActiveOption' : 'Option'}>Accesorios</NavLink>
             </div>
-            <CartWidget />
+            <Link to={"/cart"}>
+                <img src="../assets/carrito.png" className="imgcarrito" alt="carrito" />
+            </Link>
         </nav>
     )
 }

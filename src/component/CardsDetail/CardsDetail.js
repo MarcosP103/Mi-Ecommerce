@@ -1,36 +1,15 @@
-import React, { useContext, useEffect, useState } from "react";
+import React, { useState } from "react";
+import { useContext } from "react";
 import { coleccionContext } from "../../context/ColeccionContext";
-import ItemCount from "../Contador/Contador";
 
 const CardsDetail = ({ id, titulo, imag, precio, desc, carac, stock }) => {
 
-  const [cantidadAdd, setCantidadAdd]=useState(0)
+  const { carrito, setCarrito } = useContext(coleccionContext)
 
-  const { inCarrito, setCarrito } = useContext(coleccionContext);
-  const addItem = (producto, cantidad) => {
-    if (!inCarrito(producto.id)) {
-      setCarrito((prev) => [...prev, { ...producto, cantidad }]);
-    } else {
-      console.error("El producto ya fue agregado");
-    }
-  };
-  
-
-  const handleOnAdd=(cantidad)=>{
-    setCantidadAdd(cantidad)
-
-    const item={
-      id, titulo, precio
-    }
-
-    addItem(item, cantidad)
+  const comprarProd = (CardsDetail, id) => {
+    console.log(CardsDetail, id)
+    setCarrito([...carrito, CardsDetail])
   }
-  
-  const {coleccion, setColeccion}=useContext(coleccionContext)
-
-  useEffect(()=>{
-    console.log(coleccion)
-  },[coleccion])
 
   return (
     <article className="divcards">
@@ -39,12 +18,8 @@ const CardsDetail = ({ id, titulo, imag, precio, desc, carac, stock }) => {
       <p>{desc}</p>
       <p>{carac}</p>
       <h3>{precio}</h3>
-      <ItemCount
-        inicial={1}
-        stock={stock}
-        onAdd={(cantidadAdd) => console.log("Cantidad agregada ", cantidadAdd)}
-        funcion={()=>setColeccion(prevState=>[...prevState, id])}
-      />
+      <p>Stock {stock}</p>
+      <button onClick={()=> comprarProd(CardsDetail)}>Comprar</button>
     </article>
   );
 };

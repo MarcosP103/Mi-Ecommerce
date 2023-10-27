@@ -42,3 +42,8 @@ button:is(:hover, :focus){
 .hsubrayado{
     text-decoration: none;
 }
+
+.imgcarrito{
+    width: 25px;
+    height: 25px;
+}
