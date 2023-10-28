@@ -1,7 +1,7 @@
 .divcards{
     width: 300px;
-	height: 300px;
-	border: 1px solid black;
+	height: 350px;
+	border: 2px solid black;
 	border-radius: 10px;
 	text-align: center;
 	font-weight: bold;
@@ -9,6 +9,7 @@
   	transition-duration: 350ms;
   	transition-timing-function: ease;
   	box-shadow: 0px 2px 4px 0px rgba(0, 0, 0, 0.24);
+	margin: 10px;
 }
 
 .divcards:is(:hover, :focus) {

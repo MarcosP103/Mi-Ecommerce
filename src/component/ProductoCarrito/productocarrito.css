@@ -1,0 +1,16 @@
+.producto{
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    margin: 20px;
+}
+
+.imgprodcar{
+    width: 15%;
+    height: 15%;
+}
+
+.eliminarproducto{
+    cursor: pointer;
+    font-weight: bold;
+}
