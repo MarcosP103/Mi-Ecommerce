@@ -8,6 +8,12 @@
     background: #c2e6f8;
 }
 
+.nav a{
+    text-decoration: none;
+    color: #000;
+    font-size: large;
+}
+
 .nav h3{
     font-size: 20px;
     width: 80px;
@@ -39,7 +45,7 @@ button:is(:hover, :focus){
 	transition-duration: 1s;
 }
 
-.hsubrayado{
+.hsubrayado a{
     text-decoration: none;
 }
 
