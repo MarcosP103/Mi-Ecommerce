@@ -1,9 +1,9 @@
-import "./stylecardlist.css";
 import { useState, useEffect } from "react";
 import Cards from "../Cards/Cards";
 import { useParams } from "react-router-dom";
 import { db } from "../..";
-import { collection, getDocs, query, where } from "firebase/firestore";
+import { collection, getDocs } from "firebase/firestore";
+import "./stylecardlist.css";
 
 export default function CardList() {
   const [productos, setProductos] = useState([]);
@@ -17,13 +17,12 @@ export default function CardList() {
         "instrumentos",
         "microfonos",
         "consolas",
-        "accesorios"
+        "accesorios",
       ];
 
       for (const categoria of todasLasCategorias) {
         const categoryCollection = collection(db, categoria);
 
-        // Verifica si la categoría es nula o igual a catId antes de cargar los productos
         if (!catId || categoria === catId) {
           try {
             const res = await getDocs(categoryCollection);
@@ -63,8 +62,3 @@ export default function CardList() {
     </div>
   );
 }
-
-
-
-
-

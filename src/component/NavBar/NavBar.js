@@ -1,9 +1,13 @@
 
-import "./stylenav.css";
 import { NavLink, Link } from 'react-router-dom';
+import TotalAgregados from "../TotalAgregados/TotalAgregados";
+import { useContext } from "react";
+import { coleccionContext } from "../../context/ColeccionContext";
+import "./stylenav.css";
 
 
 export default function NavBar () {
+    const { carrito } = useContext(coleccionContext);
     return(
         <nav className='nav'>
             <Link to='/'>
@@ -18,6 +22,7 @@ export default function NavBar () {
             </div>
             <Link to={"/cart"}>
                 <img src="../assets/carrito.png" className="imgcarrito" alt="carrito" />
+                {carrito.length > 0 ? <TotalAgregados/> : null}
             </Link>
         </nav>
     )
